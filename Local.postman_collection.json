@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "9f0b3c58-8162-4fab-92e3-25557b022b36",
+		"name": "Local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api/transform/json",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 1,\n  \"name\": \"DeviceFeatures\",\n  \"transforms\": [\n    {\n      \"name\": \"device_os\",\n      \"useInML\": true,\n      \"enabled\": true,\n      \"jsltExpression\": \".device.osType\"\n    },\n    {\n      \"name\": \"device_description\",\n      \"useInML\": true,\n      \"enabled\": true,\n      \"jsltExpression\": \".device.osType + \\\" \\\" + .device.model\"\n    }\n  ],\n  \"json\": {\n    \"eventId\": \"878237843\",\n    \"device\": {\n      \"osType\": \"Linux\",\n      \"model\": \"Laptop\"\n    },\n    \"ip\": \"10.45.2.30\",\n    \"sessionId\": \"ads79uoijd098098\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/transform/json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"transform",
+						"json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
